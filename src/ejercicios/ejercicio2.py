@@ -17,6 +17,7 @@ class Ejercicio2(object):
         Constructor
         '''
         
+        
     def usrInputSecs(self):
         
         intUsrSecs = int(raw_input('Introduce una cantidad de segundos: '))
@@ -29,9 +30,9 @@ class Ejercicio2(object):
             intCalcSecs = int(intUsrSecs % 60)
 
         if intUsrSecs >= 60:
-            intCalcMin = int(intUsrSecs / 60) - 60
+            intCalcMin = int(intUsrSecs % 60)
             
-        if intCalcMin >= 60:
+        if intCalcMin >= 1:
             intCalcHours = int((intUsrSecs / 60) / 60)
         
         formatTime = '%d Hora/s:%d Minuto/s:%d Segundo/s' % (intCalcHours, intCalcMin, intCalcSecs)

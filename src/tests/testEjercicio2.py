@@ -31,7 +31,7 @@ class Test(unittest.TestCase):
     
     def testCalcFormTime(self):
         
-        self.assertEqual(self.instEjercicio2.calcFormTime(3665), '1 Hora/s:1 Minuto/s:5 Segundo/s')
+        self.assertEqual(self.instEjercicio2.calcFormTime(12345), '3 Hora/s:45 Minuto/s:45 Segundo/s')
 
 
 if __name__ == "__main__":
