@@ -12,10 +12,13 @@ from ejercicios.ejercicio2 import Ejercicio2
 
 if __name__ == '__main__':
     
+    #Ejercicio 1.
     instEjercicio1 = Ejercicio1()
     print 'EL indice de masa corporal es: %f.' %  (instEjercicio1.calIMC(110, 1.72))
     
+    #Ejercicio 2.
     instEjercicio2 = Ejercicio2()
     secs = instEjercicio2.usrInputSecs()
     print instEjercicio2.calcFormTime(secs)
     
+    #Ejercicio 3.
