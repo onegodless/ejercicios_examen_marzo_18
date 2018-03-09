@@ -13,8 +13,7 @@ class Ejercicio3(object):
     classdocs
     '''
     
-    
-    menu = ('1.Calcular el área de un triangulo.',
+    __menu = ('1.Calcular el área de un triangulo.',
              '2.Calcular el área de un círcuo.')
 
     def __init__(self):
@@ -22,11 +21,54 @@ class Ejercicio3(object):
         Constructor
         '''
     
+    def validateUsrInput(self, input):
+        for x in input:
+            try:
+                float(x)
+                return 'Valid'
+            except ValueError:
+                return 'notValid'
     
-    def usrMenu(self):
+    
+    def menuPrint(self):
         
         print self.menu
-        choice = raw_input('Elige una de las opciones.')
+        while True:
+            choice = raw_input('Elige una de las opciones o escribe "q" para salir: ')
+            if choice == 1:
+                self.usrInputTriagle()
+                break
+                
+            elif choice == 2:
+                self.usrInputCircle()
+                break
+                
+            elif choice == 'q':
+                break
+
+    
+    
+    def usrInputTriangle(self):
+        
+        status = 'notValid'
+        
+        while self.__status == 'notValid':
+            baseTriangle = raw_input('Elige una base para el triángulo o escribe "q" para salir: ')
+            status = self.validateUsrInput(baseTriangle)
+            
+        status = 'notValid'
+        
+        while status == 'notValid':
+            heightTriangle = raw_input('Elige una altura para el triángulo: ')
+            status = self.validateUsrInput(heightTriangle)
+            
+        self.calcTriangleArea(int(baseTriangle), int(heightTriangle))
+        
+        
+    def usrInputCircle(self):
+        
+        radiusCircle = raw_input('Elige un radio para el círculo.')
+        self.calcCircleArea(int(radiusCircle))
         
     
     def calcTriangleArea(self, base, height):

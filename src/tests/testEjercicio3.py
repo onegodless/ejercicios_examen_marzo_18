@@ -24,10 +24,9 @@ class Test(unittest.TestCase):
         pass
     
     
-    def testUsrMenu(self):
+    def testUsrInput(self):
         
-        choice = self.instEjercicio3.usrMenu()
-        
+        self.instEjercicio3.usrInput()
     
     
     def testCalcTriangleArea(self):
