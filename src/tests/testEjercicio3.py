@@ -24,11 +24,6 @@ class Test(unittest.TestCase):
         pass
     
     
-    def testUsrInput(self):
-        
-        self.instEjercicio3.usrInput()
-    
-    
     def testCalcTriangleArea(self):
         
         self.assertEqual(self.instEjercicio3.calcTriangleArea(2.45, 3.65), 4.47)

@@ -18,13 +18,12 @@ class Test(unittest.TestCase):
     def tearDown(self):
         pass
 
-
     def testName(self):
         pass
 
 
     def testFormDistance(self):
-        self.instEjercicio4.formDistance(204200)
+        self.instEjercicio4.formDistance(204255)
 
 if __name__ == "__main__":
     unittest.main()

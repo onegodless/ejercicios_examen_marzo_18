@@ -21,65 +21,51 @@ class Ejercicio3(object):
         Constructor
         '''
     
-    def validateUsrInput(self, input):
-        for x in input:
-            try:
-                float(x)
-                return 'Valid'
-            except ValueError:
-                return 'notValid'
-    
-    
-    def menuPrint(self):
+    def printMenu(self):
+        '''
+        Desc: Prints the menu so the user can select an operation and ask the user for the 
+            parameters to complete the operation.
         
-        print self.menu
-        while True:
-            choice = raw_input('Elige una de las opciones o escribe "q" para salir: ')
-            if choice == 1:
-                self.usrInputTriagle()
-                break
-                
-            elif choice == 2:
-                self.usrInputCircle()
-                break
-                
-            elif choice == 'q':
-                break
-
-    
-    
-    def usrInputTriangle(self):
+        Pre: 
         
-        status = 'notValid'
+        Post: Calls one the other methods of the class with the parameters they need.
+        '''
         
-        while self.__status == 'notValid':
-            baseTriangle = raw_input('Elige una base para el triángulo o escribe "q" para salir: ')
-            status = self.validateUsrInput(baseTriangle)
-            
-        status = 'notValid'
+        print self.__menu
+        usrChoice = raw_input('¿Qué quieres calcular?: ')
         
-        while status == 'notValid':
-            heightTriangle = raw_input('Elige una altura para el triángulo: ')
-            status = self.validateUsrInput(heightTriangle)
-            
-        self.calcTriangleArea(int(baseTriangle), int(heightTriangle))
+        if usrChoice == '1':
+            base = float(raw_input('Qué longitud de base quieres darle al trángulo: '))
+            height = float(raw_input('Qué altura quieres darle al triángulo: '))
+            areaTriangle = self.calcTriangleArea(base, height)
+            return areaTriangle
         
-        
-    def usrInputCircle(self):
-        
-        radiusCircle = raw_input('Elige un radio para el círculo.')
-        self.calcCircleArea(int(radiusCircle))
-        
+        elif usrChoice == '2':
+            radius = float(raw_input('Qué radio quieres darle al círculo: '))
+            areaCircle = self.calcCircleArea(radius)
+            return areaCircle
     
     def calcTriangleArea(self, base, height):
+        '''
+        Desc: Finds the area of a triangle.
         
+        Pre: Takes the base and height as real numbers.
+        
+        Post: Returns the area of the triangle.
+        '''
         #area  = base * height / 2.
         areaTriangle = (base * height) / 2
         return round(areaTriangle, 2)
     
     
     def calcCircleArea(self, radius):
+        '''
+        Desc: Finds the area of a circle.
         
+        Pre: Takes the radius as a real number.
+        
+        Post: Returns the area of the circle.
+        '''
         #area = pi * radius²
         areaCircle = math.pi * math.pow(radius, 2)
         return round(areaCircle, 2)

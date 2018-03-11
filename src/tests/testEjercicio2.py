@@ -24,14 +24,14 @@ class Test(unittest.TestCase):
         pass
     
     
-    def testUsrInputSecs(self):
-        
-        self.assertEqual(self.instEjercicio2.usrInputSecs(), 185)
-    
-    
     def testCalcFormTime(self):
         
         self.assertEqual(self.instEjercicio2.calcFormTime(12345), '3 Hora/s:45 Minuto/s:45 Segundo/s')
+        
+        
+    def testCalcFormTime_Case2(self):
+        
+        self.assertEqual(self.instEjercicio2.calcFormTime(5), '0 Hora/s:0 Minuto/s:5 Segundo/s')
 
 
 if __name__ == "__main__":

@@ -19,11 +19,17 @@ class Ejercicio4(object):
         
         
     def formDistance(self, distance):
+        '''
+        Desc: Converts the given distance in cm into Km, m, cm.
         
-        km = distance / 100000
-        m = (float(distance) / 100000 - km)*1000
-        cm = (((float(distance) / 100000 - km)*1000)-int(m))*100
+        Pre: Takes a real number representing the distance in cm.
+        
+        Post: Prints the conversion as a string.
+        '''
+        km = int(distance / 100000)
+        m = int(((float(distance) / 100000) - km) * 1000)
+        cm = int((((float(distance) / 100000 - km) * 1000) - int(m)) * 100)
         
         print ('%d km %d m %d cm') % (km, m, cm)
         
-        
+            
