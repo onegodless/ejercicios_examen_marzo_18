@@ -10,6 +10,7 @@ from ejercicios.ejercicio1 import Ejercicio1
 from ejercicios.ejercicio2 import Ejercicio2
 from ejercicios.ejercicio3 import Ejercicio3
 from ejercicios.ejercicio4 import Ejercicio4
+from ejercicios.ejercicio5 import Ejercicio5
 
 
 if __name__ == '__main__':
@@ -39,3 +40,7 @@ if __name__ == '__main__':
     instEjercicio4 = Ejercicio4()
     instEjercicio4.formDistance(204521)
     print '\n'
+    
+    #Ejercicio5
+    instEjercicio5 = Ejercicio5()
+    instEjercicio5.gameLoop()
